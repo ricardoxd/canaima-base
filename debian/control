@@ -1,4 +1,4 @@
-Source: canaima-escritorio-gnome
+Source: canaima-base
 Section: misc
 Priority: optional
 Maintainer: Equipo de Desarrollo de Canaima GNU/Linux <desarrolladores@canaima.softwarelibre.gob.ve>
@@ -6,11 +6,11 @@ Uploaders: José Miguel Parrella Romero <jparrella@onuva.com>, Carlos David Marr
 Build-Depends: debhelper (>= 7.0.50~), cdbs
 Standards-Version: 3.9.1
 Homepage: http://canaima.softwarelibre.gob.ve/
-Vcs-Git: git://gitorious.org/canaima-gnu-linux/canaima-escritorio-gnome.git
-Vcs-Browser: http://gitorious.org/canaima-gnu-linux/canaima-escritorio-gnome/trees/master
+Vcs-Git: git://gitorious.org/canaima-gnu-linux/canaima-base.git
+Vcs-Browser: http://gitorious.org/canaima-gnu-linux/canaima-base/trees/master
 
-Package: canaima-escritorio-gnome
+Package: canaima-base
 Architecture: all
-Depends: base-files (>=5.9+1canaima0), desktop-base (>=5.0.6canaima4), gdm3 (>=2.30.5-5canaima2), canaima-chat, canaima-bienvenido, canaima-acerca, canaima-estilo-visual, canaima-llaves, canaima-notas, ${shlibs:Depends}, ${misc:Depends}
+Depends: base-files (>=5.9+1canaima0), canaima-escritorio-gnome | canaima-escritorio-xfce | canaima-escritorio-kde | canaima-raiz, ${shlibs:Depends}, ${misc:Depends}
 Description: Archivos base de Canaima GNU/Linux
  Este paquete provee los archivos base de Canaima GNU/Linux.

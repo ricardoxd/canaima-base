@@ -1,7 +1,5 @@
-canaima-escritorio-gnome (3.0+0) unstable; urgency=low
+canaima-base (3.0+0) unstable; urgency=low
 
-  * Reconstrucción del paquete canaima-escritorio-gnome de acuerdo con las nuevas políticas de desarrollo de Canaima GNU/Linux
-  * [a46fa9a] Agregando vcs-git a debian/control
-  * [873aed8] Corrigiendo errores reportados por lintian
+  * Reconstrucción del paquete canaima-base de acuerdo con las nuevas políticas de desarrollo de Canaima GNU/Linux
 
  -- Luis Alejandro Martínez Faneyth <martinez.faneyth@gmail.com>  Fri, 19 Nov 2010 16:51:09 -0430
