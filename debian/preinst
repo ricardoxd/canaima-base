@@ -19,8 +19,13 @@ case ${1} in
 
 	install|upgrade)
 
-		echo 'LANG="es_VE.UTF-8"\nLANGUAGE="es_VE:es"' > /etc/default/locale
+		echo 'LANG="es_VE.UTF-8"' > /etc/default/locale
+		echo 'LANGUAGE="es_VE:es"' >> /etc/default/locale
+		echo 'LC_ALL="es_VE.UTF-8"' >> /etc/default/locale
 		echo 'es_VE.UTF-8 UTF-8' > /etc/locale.gen
+		export LC_ALL="es_VE.UTF-8"
+		export LANGUAGE="es_VE:es"
+		export LANG="es_VE.UTF-8"
 
 		locale-gen
 		
