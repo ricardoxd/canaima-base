@@ -34,6 +34,10 @@ case ${1} in
 
 		setxkbmap latam
 
+		echo "===== ADVERTENCIA: Su archivo /etc/apt/sources.list será respaldado ====="
+		echo "===== en /etc/apt/sources.list.respaldo, el archivo original será   ====="
+		echo "===== reescrito con las fuentes de software para Canaima GNU/Linux  ====="
+
 		mv /etc/apt/sources.list /etc/apt/sources.list.respaldo
 
 cat <<EOF >/etc/apt/sources.list
