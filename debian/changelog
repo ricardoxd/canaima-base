@@ -1,3 +1,9 @@
+canaima-base (3.0+3) unstable; urgency=low
+
+  * [511b937] Corrigiendo scripts del mantenedor
+
+ -- Luis Alejandro Martínez Faneyth <martinez.faneyth@gmail.com>  Wed, 01 Dec 2010 11:12:32 -0430
+
 canaima-base (3.0+2) unstable; urgency=low
 
   * [118b0c3] Corrigiendo scripts del mantenedor
