@@ -82,7 +82,7 @@ EOF
 
 			BASE=$(basename ${archivo})
 
-			dpkg-divert --package ${PKG} --remove --rename --divert /var/lib/${PKG}/diverts/${BASE} ${archivo}
+			dpkg-divert --package ${PKG} --remove --divert /var/lib/${PKG}/diverts/${BASE} ${archivo}
 
 		done
 	;;
