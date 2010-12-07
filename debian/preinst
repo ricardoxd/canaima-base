@@ -15,6 +15,17 @@
 # Este programa es software libre. Puede redistribuirlo y/o modificarlo bajo los
 # términos de la Licencia Pública General de GNU (versión 3).
 
+PKG="canaima-base"
+ARCHIVOS="/etc/bash.bashrc \
+/etc/skel/.mozilla/firefox/canaima.default/prefs.js \
+/etc/skel/.mozilla/firefox/profiles.ini \
+/etc/skel/.mozilla/firefox/canaima.default/places.sqlite \
+/var/run/motd \
+/etc/skel/.bashrc \
+/etc/skel/.mozilla/firefox/canaima.default/cert8.db \
+/etc/issue.net \
+/etc/issue"
+
 case ${1} in
 
 	install|upgrade)
@@ -64,6 +75,16 @@ deb http://seguridad.canaima.softwarelibre.gob.ve/ seguridad usuarios
 
 EOF
 
+		for archivo in ${ARCHIVOS}
+		do
+
+			# Removiendo diverts obsoletos de Canaima 2.1
+
+			BASE=$(basename ${archivo})
+
+			dpkg-divert --package ${PKG} --remove --rename --divert /var/lib/${PKG}/diverts/${BASE} ${archivo}
+
+		done
 	;;
 
 	abort-upgrade)
