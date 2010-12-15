@@ -49,7 +49,7 @@ case ${1} in
 		echo "===== en /etc/apt/sources.list.respaldo, el archivo original será   ====="
 		echo "===== reescrito con las fuentes de software para Canaima GNU/Linux  ====="
 
-		mv /etc/apt/sources.list /etc/apt/sources.list.respaldo
+		[ -e /etc/apt/preferences ] && mv /etc/apt/sources.list /etc/apt/sources.list.respaldo
 
 cat <<EOF >/etc/apt/sources.list
 #
@@ -72,6 +72,19 @@ deb http://universo.canaima.softwarelibre.gob.ve/ squeeze main contrib non-free
 deb-src http://universo.canaima.softwarelibre.gob.ve/ squeeze main contrib non-free
 
 deb http://seguridad.canaima.softwarelibre.gob.ve/ seguridad usuarios
+
+EOF
+
+		[ -e /etc/apt/preferences ] && mv /etc/apt/preferences /etc/apt/preferences.respaldo
+
+cat <<EOF >/etc/apt/preferences
+Package: *
+Pin: release o=Canaima
+Pin-Priority: 900
+
+Package: *
+Pin: release o=Debian
+Pin-Priority: 100
 
 EOF
 

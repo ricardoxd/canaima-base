@@ -1,7 +1,7 @@
 #!/bin/bash -e
 #
 # ==============================================================================
-# PAQUETE: canaima-escritorio-gnome
+# PAQUETE: canaima-base
 # ARCHIVO: postrm
 # DESCRIPCIÓN: Revierte los cambios hechos por el paquete en los scripts del
 #              mantenedor, de forma tal de asegurarse que el sistema quede
@@ -16,6 +16,8 @@
 #
 # Este programa es software libre. Puede redistribuirlo y/o modificarlo bajo los
 # términos de la Licencia Pública General de GNU (versión 3).
+
+PKG="canaima-base"
 
 case ${1} in
 
