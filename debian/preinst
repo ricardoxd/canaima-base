@@ -58,19 +58,17 @@ cat <<EOF >/etc/apt/sources.list
 
 # Repositorios Estables
 #deb http://repositorio.canaima.softwarelibre.gob.ve/ estable usuarios
-#deb-src http://repositorio.canaima.softwarelibre.gob.ve/ estable usuarios
 
 # Repositorio de Pruebas
 #deb http://repositorio.canaima.softwarelibre.gob.ve/ pruebas usuarios
-#deb-src http://repositorio.canaima.softwarelibre.gob.ve/ pruebas usuarios
 
 # Repositorio de Desarrollo
 deb http://repositorio.canaima.softwarelibre.gob.ve/ desarrollo usuarios
-deb-src http://repositorio.canaima.softwarelibre.gob.ve/ desarrollo usuarios
 
+# Repositorio de la Base (Debian)
 deb http://universo.canaima.softwarelibre.gob.ve/ squeeze main contrib non-free
-deb-src http://universo.canaima.softwarelibre.gob.ve/ squeeze main contrib non-free
 
+# Repositorio de actualizaciones de Emergencia
 deb http://seguridad.canaima.softwarelibre.gob.ve/ seguridad usuarios
 
 EOF
