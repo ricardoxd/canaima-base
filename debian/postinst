@@ -20,7 +20,18 @@ PKG="canaima-base"
 case ${1} in
 
 	configure)
-	
+
+	dpkg-reconfigure localepurge
+
+	for NUMBER in {1..5}
+	do
+
+	sed -i 's/allow-hotplug eth'$NUMBER'/# allow-hotplug eth'$NUMBER'/g' /etc/network/interfaces
+	sed -i 's/auto eth'$NUMBER'/# auto eth'$NUMBER'/g' /etc/network/interfaces
+	sed -i 's/iface eth'$NUMBER' inet dhcp/# iface eth'$NUMBER' inet dhcp/g' /etc/network/interfaces
+
+	done
+
 	if [ -x /usr/share/update-notifier/notify-reboot-required ]
 	then
 
