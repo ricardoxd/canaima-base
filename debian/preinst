@@ -16,20 +16,42 @@
 # términos de la Licencia Pública General de GNU (versión 3).
 
 PKG="canaima-base"
-ARCHIVOS="/etc/bash.bashrc \
-/etc/skel/.mozilla/firefox/canaima.default/prefs.js \
-/etc/skel/.mozilla/firefox/profiles.ini \
-/etc/skel/.mozilla/firefox/canaima.default/places.sqlite \
-/var/run/motd \
-/etc/skel/.bashrc \
-/etc/skel/.mozilla/firefox/canaima.default/cert8.db \
-/etc/issue.net \
-/etc/issue"
+ARCHIVOS="/etc/bash.bashrc /etc/skel/.mozilla/firefox/canaima.default/prefs.js /etc/skel/.mozilla/firefox/profiles.ini /etc/skel/.mozilla/firefox/canaima.default/places.sqlite /var/run/motd /etc/skel/.bashrc /etc/skel/.mozilla/firefox/canaima.default/cert8.db /etc/issue.net /etc/issue"
+# Color Verde
+VERDE="\e[1;32m"
+# Color Rojo
+ROJO="\e[1;31m"
+# Color Amarillo
+AMARILLO="\e[1;33m"
+# Negrita
+BOLD="\e[1m"
+# Caracter de fin de línea
+FIN="\e[0m"
+
+function ERROR() {
+echo -e ${ROJO}${1}${FIN}
+exit 1
+}
+
+function ADVERTENCIA() {
+echo -e ${AMARILLO}${1}${FIN}
+}
+
+function EXITO() {
+echo -e ${VERDE}${1}${FIN}
+}
 
 case ${1} in
 
 	install|upgrade)
 
+		ADVERTENCIA "Removiendo diverts obsoletos de Canaima 2.1"
+		for archivo in ${ARCHIVOS}; do
+			BASE=$(basename ${archivo})
+			dpkg-divert --package ${PKG} --remove --divert /var/lib/${PKG}/diverts/${BASE} ${archivo}
+		done
+
+		ADVERTENCIA "Regenerando los locales para es_VE.UTF-8"
 		echo 'LANG="es_VE.UTF-8"' > /etc/default/locale
 		echo 'LANGUAGE="es_VE:es"' >> /etc/default/locale
 		echo 'LC_ALL="es_VE.UTF-8"' >> /etc/default/locale
@@ -38,18 +60,22 @@ case ${1} in
 		export LANGUAGE="es_VE:es"
 		export LANG="es_VE.UTF-8"
 
-		locale-gen
-		
+		if [ -x $( which locale-gen ) ]; then
+			locale-gen
+		fi
+
+		ADVERTENCIA "Estableciendo modelo de teclado latam, pc105"	
 		sed -i "s/$( grep 'XKBMODEL' /etc/default/keyboard )/XKBMODEL='pc105'/g" /etc/default/keyboard
 		sed -i "s/$( grep 'XKBLAYOUT' /etc/default/keyboard )/XKBLAYOUT='latam'/g" /etc/default/keyboard
 
-		setxkbmap latam
+		if [ -x $( which setxkbmap ) ]; then		
+			setxkbmap latam
+		fi
 
-		echo "===== ADVERTENCIA: Su archivo /etc/apt/sources.list será respaldado ====="
-		echo "===== en /etc/apt/sources.list.respaldo, el archivo original será   ====="
-		echo "===== reescrito con las fuentes de software para Canaima GNU/Linux  ====="
 
-		[ -e /etc/apt/preferences ] && mv /etc/apt/sources.list /etc/apt/sources.list.respaldo
+		[ -e /etc/apt/sources.list ] && mv /etc/apt/sources.list /etc/apt/sources.list.respaldo
+		[ -e /etc/apt/preferences ] && mv /etc/apt/preferences /etc/apt/preferences.respaldo
+		[ -e /etc/locale.nopurge ] && mv /etc/locale.nopurge /etc/locale.nopurge.respaldo
 
 cat <<EOF >/etc/apt/sources.list
 #
@@ -73,8 +99,6 @@ deb http://seguridad.canaima.softwarelibre.gob.ve/ seguridad usuarios
 
 EOF
 
-		[ -e /etc/apt/preferences ] && mv /etc/apt/preferences /etc/apt/preferences.respaldo
-
 cat <<EOF >/etc/apt/preferences
 Package: *
 Pin: release o=Canaima
@@ -85,8 +109,6 @@ Pin: release o=Debian
 Pin-Priority: 100
 
 EOF
-
-		[ -e /etc/locale.nopurge ] && mv /etc/locale.nopurge /etc/locale.nopurge.respaldo
 
 cat <<EOF >/etc/locale.nopurge
 ####################################################
@@ -117,7 +139,7 @@ SHOWFREEDSPACE
 # Commenting out this string enables faster but less
 # accurate calculation of freed disk space:
 
-#QUICKNDIRTYCALC
+QUICKNDIRTYCALC
 
 #####################################################
 # Commenting out this string disables verbose output:
@@ -134,24 +156,13 @@ es_VE
 es_VE.UTF-8
 
 EOF
-
-		for archivo in ${ARCHIVOS}
-		do
-
-			# Removiendo diverts obsoletos de Canaima 2.1
-
-			BASE=$(basename ${archivo})
-
-			dpkg-divert --package ${PKG} --remove --divert /var/lib/${PKG}/diverts/${BASE} ${archivo}
-
-		done
 	;;
 
 	abort-upgrade)
 	;;
 
 	*)
-		echo "preinst no reconoce el argumento '"${1}"'" >&2
+		ERROR "preinst no reconoce el argumento '"${1}"'" >&2
 		exit 1
 	;;
 
