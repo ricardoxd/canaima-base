@@ -16,27 +16,46 @@
 # términos de la Licencia Pública General de GNU (versión 3).
 
 PKG="canaima-base"
+# Color Verde
+VERDE="\e[1;32m"
+# Color Rojo
+ROJO="\e[1;31m"
+# Color Amarillo
+AMARILLO="\e[1;33m"
+# Negrita
+BOLD="\e[1m"
+# Caracter de fin de línea
+FIN="\e[0m"
+
+function ERROR() {
+echo -e ${ROJO}${1}${FIN}
+exit 1
+}
+
+function ADVERTENCIA() {
+echo -e ${AMARILLO}${1}${FIN}
+}
+
+function EXITO() {
+echo -e ${VERDE}${1}${FIN}
+}
 
 case ${1} in
 
 	configure)
 
+	ADVERTENCIA "Reconfigurando localepurge"
 	dpkg-reconfigure localepurge
 
-	for NUMBER in {1..5}
-	do
-
-	sed -i 's/allow-hotplug eth'$NUMBER'/# allow-hotplug eth'$NUMBER'/g' /etc/network/interfaces
-	sed -i 's/auto eth'$NUMBER'/# auto eth'$NUMBER'/g' /etc/network/interfaces
-	sed -i 's/iface eth'$NUMBER' inet dhcp/# iface eth'$NUMBER' inet dhcp/g' /etc/network/interfaces
-
+	ADVERTENCIA "Corrigiendo bug del Network-Manager de Debian"
+	for NUMBER in {1..5};do
+		sed -i 's/allow-hotplug eth'$NUMBER'/# allow-hotplug eth'$NUMBER'/g' /etc/network/interfaces
+		sed -i 's/auto eth'$NUMBER'/# auto eth'$NUMBER'/g' /etc/network/interfaces
+		sed -i 's/iface eth'$NUMBER' inet dhcp/# iface eth'$NUMBER' inet dhcp/g' /etc/network/interfaces
 	done
 
-	if [ -x /usr/share/update-notifier/notify-reboot-required ]
-	then
-
+	if [ -x /usr/share/update-notifier/notify-reboot-required ]; then
 		/usr/share/update-notifier/notify-reboot-required
-
 	fi
 
 	;;
