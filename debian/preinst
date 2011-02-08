@@ -68,11 +68,6 @@ case ${1} in
 		sed -i "s/$( grep 'XKBMODEL' /etc/default/keyboard )/XKBMODEL='pc105'/g" /etc/default/keyboard
 		sed -i "s/$( grep 'XKBLAYOUT' /etc/default/keyboard )/XKBLAYOUT='latam'/g" /etc/default/keyboard
 
-		if [ -x $( which setxkbmap ) ]; then		
-			setxkbmap latam
-		fi
-
-
 		[ -e /etc/apt/sources.list ] && mv /etc/apt/sources.list /etc/apt/sources.list.respaldo
 		[ -e /etc/apt/preferences ] && mv /etc/apt/preferences /etc/apt/preferences.respaldo
 		[ -e /etc/locale.nopurge ] && mv /etc/locale.nopurge /etc/locale.nopurge.respaldo
