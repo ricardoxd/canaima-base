@@ -1,3 +1,9 @@
+canaima-base (3.0+10) unstable; urgency=low
+
+  * [1007d0c] Quitando dependencias
+
+ -- Luis Alejandro Martínez Faneyth <martinez.faneyth@gmail.com>  Tue, 08 Feb 2011 13:40:22 -0430
+
 canaima-base (3.0+9) unstable; urgency=low
 
   * [10da79b] Removiendo llamada a setxkbmap, necesita sesión de X
