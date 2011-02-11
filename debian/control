@@ -11,6 +11,7 @@ Vcs-Browser: http://gitorious.org/canaima-gnu-linux/canaima-base/trees/master
 
 Package: canaima-base
 Architecture: all
-Depends: keyboard-configuration, localepurge, base-files (>=5.9+1canaima0), lsb-core (>=3.2-23.1canaima0), lsb-release (>=3.2-23.1canaima0), desktop-base (>=5.0.6canaima4), canaima-escritorio-gnome, ${shlibs:Depends}, ${misc:Depends}
+Depends: base-files (>= 5.9+1canaima0), lsb-core (>= 3.2-23.1canaima0), lsb-release (>= 3.2-23.1canaima0), desktop-base (>= 5.0.6canaima4), canaima-escritorio-gnome, ${shlibs:Depends}, ${misc:Depends}
+Pre-Depends: dpkg, locales, keyboard-configuration, localepurge, ifupdown, netbase, apt
 Description: Archivos base de Canaima GNU/Linux
  Este paquete provee los archivos base de Canaima GNU/Linux.
