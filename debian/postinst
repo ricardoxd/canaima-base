@@ -91,10 +91,10 @@ cat <<EOF >/etc/apt/sources.list
 #deb http://repositorio.canaima.softwarelibre.gob.ve/ estable usuarios
 
 # Repositorio de Pruebas
-#deb http://repositorio.canaima.softwarelibre.gob.ve/ pruebas usuarios
+deb http://repositorio.canaima.softwarelibre.gob.ve/ pruebas usuarios
 
 # Repositorio de Desarrollo
-deb http://repositorio.canaima.softwarelibre.gob.ve/ desarrollo usuarios
+#deb http://repositorio.canaima.softwarelibre.gob.ve/ desarrollo usuarios
 
 # Repositorio de la Base (Debian)
 deb http://universo.canaima.softwarelibre.gob.ve/ squeeze main contrib non-free
