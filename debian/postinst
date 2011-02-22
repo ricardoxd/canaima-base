@@ -174,7 +174,8 @@ es_VE.UTF-8
 EOF
 
 	ADVERTENCIA "Reconfigurando localepurge"
-	dpkg-reconfigure localepurge
+	export DEBIAN_FRONTEND="noninteractive"
+	dpkg-reconfigure -fnoninteractive localepurge
 
 	if [ -x /usr/share/update-notifier/notify-reboot-required ]; then
 		/usr/share/update-notifier/notify-reboot-required

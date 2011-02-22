@@ -1,3 +1,9 @@
+canaima-base (3.0+14) unstable; urgency=low
+
+  * [cba97c7] Ponindo nonintercative el dpk-reconfigure de localepurge
+
+ -- Luis Alejandro Martínez Faneyth <martinez.faneyth@gmail.com>  Tue, 22 Feb 2011 12:37:16 -0430
+
 canaima-base (3.0+13) unstable; urgency=low
 
   * [a74daec] Mejorando forma en que se corrige el bug del Network
