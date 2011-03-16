@@ -1,3 +1,10 @@
+canaima-base (3.0+15) unstable; urgency=low
+
+  * [5879dc6] Redistribuyendo dependencias entre canaima-base y canaima-
+    escritorio-gnome.
+
+ -- Luis Alejandro Martínez Faneyth <martinez.faneyth@gmail.com>  Wed, 16 Mar 2011 05:03:52 -0430
+
 canaima-base (3.0+14) unstable; urgency=low
 
   * [cba97c7] Ponindo nonintercative el dpk-reconfigure de localepurge
