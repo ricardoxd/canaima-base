@@ -1,3 +1,10 @@
+canaima-base (3.0+22) unstable; urgency=low
+
+  * [0b9fd3c] [ canaima-desarrollador ] Los siguientes archivos han sido
+    modificados/añadidos: control
+
+ -- Luis Alejandro Martínez Faneyth <martinez.faneyth@gmail.com>  Thu, 17 Mar 2011 17:19:32 -0430
+
 canaima-base (3.0+21) unstable; urgency=low
 
   * [d3760c2] Quitando nano de dependencias.
