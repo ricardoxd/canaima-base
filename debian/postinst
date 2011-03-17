@@ -343,11 +343,6 @@ EOF
 		propiedad=$( echo $parsing | sed 's/##--TOKEN--##/ /g' | awk '{print $2}' )
 		uuid=$( echo $parsing | sed 's/##--TOKEN--##/ /g' | awk '{print $3}' )
 
-		echo $parsing
-		echo $dispositivo
-		echo $propiedad
-		echo $uuid
-
 		case ${propiedad} in
 
 			"defaults")
