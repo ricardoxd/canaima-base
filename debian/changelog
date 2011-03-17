@@ -1,3 +1,9 @@
+canaima-base (3.0+18) unstable; urgency=low
+
+  * [b0594bb] Corrigiendo FSTAB no definido.
+
+ -- Luis Alejandro Martínez Faneyth <martinez.faneyth@gmail.com>  Thu, 17 Mar 2011 13:49:47 -0430
+
 canaima-base (3.0+17) unstable; urgency=low
 
   * [eef1f00] Corrigiendo exit 1 en la función error.
