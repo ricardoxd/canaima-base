@@ -1,3 +1,9 @@
+canaima-base (3.0+26) unstable; urgency=low
+
+  * [59eff96] Devolviendo cambios del Parche de Lennart Poettering.
+
+ -- Luis Alejandro Martínez Faneyth <martinez.faneyth@gmail.com>  Fri, 18 Mar 2011 12:03:13 -0430
+
 canaima-base (3.0+25) unstable; urgency=low
 
   * [520cbed] [ canaima-desarrollador ] Los siguientes archivos han sido
