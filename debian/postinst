@@ -52,6 +52,8 @@ case ${1} in
 		dpkg-divert --package ${PKG} --remove --divert /var/lib/${PKG}/diverts/${BASE} ${archivo}
 	done
 
+	[ ! -e /usr/sbin/update-burg ] && echo "#!/bin/bash" > /usr/sbin/update-burg
+
 	ADVERTENCIA "Regenerando los locales para es_VE.UTF-8"
 	echo 'LANG="es_VE.UTF-8"' > /etc/default/locale
 	echo 'LANGUAGE="es_VE:es"' >> /etc/default/locale
