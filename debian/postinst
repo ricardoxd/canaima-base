@@ -53,6 +53,7 @@ case ${1} in
 	done
 
 	[ ! -e /usr/sbin/update-burg ] && echo "#!/bin/bash" > /usr/sbin/update-burg
+	chmod +x /usr/sbin/update-burg
 
 	ADVERTENCIA "Regenerando los locales para es_VE.UTF-8"
 	echo 'LANG="es_VE.UTF-8"' > /etc/default/locale
