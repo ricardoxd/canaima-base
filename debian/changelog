@@ -1,3 +1,10 @@
+canaima-base (3.0+31) unstable; urgency=low
+
+  * [5c79a1e] Quitando xinit y acpi-support, porque trae muchas
+    dependencias.
+
+ -- Luis Alejandro Martínez Faneyth <martinez.faneyth@gmail.com>  Mon, 21 Mar 2011 15:34:45 -0430
+
 canaima-base (3.0+30) unstable; urgency=low
 
   * [e8bccb5] [ canaima-desarrollador ] Los siguientes archivos han sido
