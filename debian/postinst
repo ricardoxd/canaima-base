@@ -72,10 +72,6 @@ case ${1} in
 		rm -rf /usr/share/locale/${lenguaje}
 	done
 
-	[ -d /var/lib/apt/lists/ ] && rm -f /var/lib/apt/lists/*
-
-	[ -d /var/cache/apt/ ] && rm -f /var/cache/apt/*
-
 	ADVERTENCIA "Estableciendo modelo de teclado latam, pc105"	
 	sed -i "s/$( grep 'XKBMODEL' /etc/default/keyboard )/XKBMODEL='pc105'/g" /etc/default/keyboard
 	sed -i "s/$( grep 'XKBLAYOUT' /etc/default/keyboard )/XKBLAYOUT='latam'/g" /etc/default/keyboard
