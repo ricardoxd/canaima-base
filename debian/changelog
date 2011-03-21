@@ -1,3 +1,9 @@
+canaima-base (3.0+33) unstable; urgency=low
+
+  * [7faa50f] Corrigiendo error en el Postinstall
+
+ -- Luis Alejandro Martínez Faneyth <martinez.faneyth@gmail.com>  Mon, 21 Mar 2011 17:49:52 -0430
+
 canaima-base (3.0+32) unstable; urgency=low
 
   * [326851d] Sustituyendo vim por vim-tiny.
