@@ -1,3 +1,9 @@
+canaima-base (3.0+35) unstable; urgency=low
+
+  * [ed87532] Agregando xfsprogs a las dependencias.
+
+ -- Luis Alejandro Martínez Faneyth <martinez.faneyth@gmail.com>  Tue, 22 Mar 2011 01:39:40 -0430
+
 canaima-base (3.0+34) unstable; urgency=low
 
   * [e0064e3] Quitando rm -rf
