@@ -1,3 +1,9 @@
+canaima-base (3.0+36) unstable; urgency=low
+
+  * [b061128] Removiendo lsb-core de las dependencias de canaima-base.
+
+ -- Luis Alejandro Martínez Faneyth <martinez.faneyth@gmail.com>  Tue, 22 Mar 2011 07:30:32 -0430
+
 canaima-base (3.0+35) unstable; urgency=low
 
   * [ed87532] Agregando xfsprogs a las dependencias.
