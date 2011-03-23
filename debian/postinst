@@ -333,6 +333,7 @@ EOF
 	sed -i 's/, /,/g' ${FSTAB}
 	sed -i 's/  / /g' ${FSTAB}
 	sed -i 's/  / /g' ${FSTAB}
+	sed -i 's/#.*//g' ${FSTAB}
 
 	for datos in $( cat ${FSTAB} | awk '{print $3"##--TOKEN--##"$2"##--TOKEN--##"$4"##--TOKEN--##"$1}' ); do
 
@@ -344,7 +345,7 @@ EOF
 		dispositivo=$( echo $parsing | sed 's/##--TOKEN--##/ /g' | awk '{print $1}' )
 		dispositivo=$( echo $dispositivo | sed 's/\//\\\//g' )
 		propiedad=$( echo $parsing | sed 's/##--TOKEN--##/ /g' | awk '{print $2}' )
-		uuid=$( echo $parsing | sed 's/##--TOKEN--##/ /g' | awk '{print $3}' )
+		uuid=$( echo $parsing | sed 's/##--TOKEN--##/ /g' | awk '{print $3}' | sed 's/\//\\\//g' )
 
 		case ${propiedad} in
 
