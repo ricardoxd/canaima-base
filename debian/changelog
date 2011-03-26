@@ -1,3 +1,13 @@
+canaima-base (3.0+39) unstable; urgency=low
+
+  [ Francisco Vasquez Guerrero ]
+  * [dd3605f] incluyecto en las dependencias de canaima base los
+    paquetes acpi y hibernate
+
+  [ Francisco Vasquez ]
+
+ -- Francisco Vasquez <fvasquez@fvasquez.cnti.gob.ve>  Sat, 26 Mar 2011 16:03:58 -0430
+
 canaima-base (3.0+38) unstable; urgency=low
 
   * [0b54685] Agregando utilidades para el soporte de diversos sistemas
