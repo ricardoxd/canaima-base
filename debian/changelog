@@ -1,3 +1,10 @@
+canaima-base (3.0+38) unstable; urgency=low
+
+  * [0b54685] Agregando utilidades para el soporte de diversos sistemas
+    de archivos (XFS, REISER, etc).
+
+ -- Luis Alejandro Martínez Faneyth <martinez.faneyth@gmail.com>  Sat, 26 Mar 2011 12:34:05 -0430
+
 canaima-base (3.0+37) unstable; urgency=low
 
   * [64afef7] Corrigiendo bug en la optimización del fstab.
