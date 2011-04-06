@@ -1,3 +1,15 @@
+canaima-base (3.0+43) unstable; urgency=low
+
+  [ Jesús Lara (aka phenobarbital) ]
+  * [bf6c3b4] incorporando bash_completion a Canaima Base
+  * [3207b7d] incorporado creditos de Jesus Lara
+
+  [ Luis Alejandro Martínez Faneyth ]
+  * [5cc1097] Removiendo script de post-remove para el parche de Lennart
+    Poettering.
+
+ -- Luis Alejandro Martínez Faneyth <martinez.faneyth@gmail.com>  Wed, 06 Apr 2011 06:21:16 -0430
+
 canaima-base (3.0+42) unstable; urgency=low
 
   * [813c884] Limpiando el parche de Lennart Poettering y moviendo
