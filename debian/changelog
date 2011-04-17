@@ -1,3 +1,10 @@
+canaima-base (3.0+44) unstable; urgency=low
+
+  * [a688112] Corrigiendo versiones de base-files y lsb-* porque fallaba
+    la canimización de squeeze.
+
+ -- Luis Alejandro Martínez Faneyth <martinez.faneyth@gmail.com>  Sun, 17 Apr 2011 14:17:45 -0430
+
 canaima-base (3.0+43) unstable; urgency=low
 
   [ Jesús Lara (aka phenobarbital) ]
