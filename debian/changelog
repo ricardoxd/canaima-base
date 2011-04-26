@@ -1,3 +1,12 @@
+canaima-base (3.0+45) unstable; urgency=low
+
+  [ Carlos A. Guerrero M ]
+  * [f2fb054] reemplazo de repositorios por los locales del cnti
+
+  [ Carlos A. Guerrero M. ]
+
+ -- Carlos A. Guerrero M. <guerrerocarlos@gmail.com>  Tue, 26 Apr 2011 10:21:14 -0430
+
 canaima-base (3.0+44) unstable; urgency=low
 
   * [a688112] Corrigiendo versiones de base-files y lsb-* porque fallaba
