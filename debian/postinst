@@ -94,20 +94,14 @@ cat <<EOF >/etc/apt/sources.list
 # Repositorios de Canaima GNU/Linux
 #
 
-# Repositorio Estable
-#deb http://repositorio.canaima.softwarelibre.gob.ve/ aponwao usuarios
-
-# Repositorio de Pruebas
-deb http://repositorio.canaima.softwarelibre.gob.ve/ roraima usuarios
-
-# Repositorio de Desarrollo
-#deb http://repositorio.canaima.softwarelibre.gob.ve/ auyantepui usuarios
+# Repositorio Estable Local CNTI
+deb http://mirror/canaima3/repositorio estable usuarios
 
 # Repositorio de la Base (Debian)
-deb http://universo.canaima.softwarelibre.gob.ve/ squeeze main contrib non-free
+deb http://mirror/debian squeeze main contrib non-free
 
-# Repositorio de actualizaciones de Emergencia
-deb http://seguridad.canaima.softwarelibre.gob.ve/ seguridad usuarios
+# Repositorio de la Base (Debian) Security
+deb http://mirror/security squeeze updates/updates 
 
 EOF
 
