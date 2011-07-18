@@ -1,3 +1,12 @@
+canaima-base (3.0+46) unstable; urgency=low
+
+  * [75bf194] Quitando escritorios inexistentes del Recommends en
+    debian/control
+  * [6a4a3a2] Nueva versión
+  * [0eccf1a] Modificaciones de estilo
+
+ -- Luis Alejandro Martínez Faneyth <martinez.faneyth@gmail.com>  Mon, 18 Jul 2011 12:12:01 -0430
+
 canaima-base (3.0+45) unstable; urgency=low
 
   * [75bf194] Quitando escritorios inexistentes del Recommends en
