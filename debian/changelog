@@ -1,8 +1,9 @@
 canaima-base (3.1-1) stable; urgency=low
 
   * Primera versión para Canaima Popular 3.1.
+  * [42a93ca] Limpiando fuentes para la versión 3.1
 
- -- Luis Alejandro Martínez Faneyth <martinez.faneyth@gmail.com>  Thu, 27 Oct 2011 23:28:25 -0430
+ -- Luis Alejandro Martínez Faneyth <martinez.faneyth@gmail.com>  Thu, 27 Oct 2011 23:29:35 -0430
 
 canaima-base (3.0+46) unstable; urgency=low
 
