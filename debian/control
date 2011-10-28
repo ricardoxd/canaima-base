@@ -2,7 +2,7 @@ Source: canaima-base
 Section: misc
 Priority: optional
 Maintainer: Equipo de Desarrollo de Canaima GNU/Linux <desarrolladores@canaima.softwarelibre.gob.ve>
-Uploaders: José Miguel Parrella Romero <jparrella@onuva.com>, Carlos David Marrero <cdmarrero2040@gmail.com>, Orlando Andrés Fiol Carballo <ofiol@indesoft.org.ve>, Carlos Alejandro Guerrero Mora <guerrerocarlos@gmail.com>, Diego Alberto Aguilera Zambrano <diegoaguilera85@gmail.com>, Luis Alejandro Martínez Faneyth <martinez.faneyth@gmail.com>, Francisco Javier Vásquez Guerrero <franjvasquezg@gmail.com>, Jesús Lara Giménez <jesuslara@devel.com.ve>
+Uploaders: Luis Alejandro Martínez Faneyth <martinez.faneyth@gmail.com>
 Build-Depends: debhelper (>= 7.0.50~), cdbs
 Standards-Version: 3.9.1
 Homepage: http://canaima.softwarelibre.gob.ve/
@@ -11,8 +11,86 @@ Vcs-Browser: http://gitorious.org/canaima-gnu-linux/canaima-base/trees/master
 
 Package: canaima-base
 Architecture: all
-Depends: base-files (>= 6.0+canaima9), lsb-release (>= 3.2-23.3canaima2), lsb-base (>= 3.2-23.3canaima2), canaima-llaves (>= 3.0), laptop-detect, pciutils, usbutils, libacl1, adduser, aptitude, libattr1, base-passwd, bash, libboost-iostreams1.42.0, bsdmainutils, libbz2-1.0, coreutils, cpio, cron, libcwidget3, dash, libdb4.8, debconf-i18n, debconf, debian-archive-keyring, debianutils, diffutils, dmidecode, e2fslibs, e2fsprogs, libcomerr2, libss2, libc-bin, libc6, findutils, gcc-4.4-base, libgcc1, libstdc++6, libgdbm3, gnupg, gpgv, grep, groff-base, gzip, hostname, ifupdown, insserv, iproute, iptables, iputils-ping, isc-dhcp-client, isc-dhcp-common, logrotate, libept1, liblocale-gettext-perl, libnfnetlink0, libselinux1, libsepol1, libsigc++-2.0-0c2a, libtext-charwidth-perl, libtext-iconv-perl, libtext-wrapi18n-perl, libusb-0.1-4, man-db, manpages, mawk, module-init-tools, libncurses5, libncursesw5, ncurses-base, ncurses-bin, net-tools, netcat-traditional, libnewt0.52, whiptail, libssl0.9.8, libpam-modules, libpam-runtime, libpam0g, perl-base, libpopt0, procps, libreadline6, readline-common, rsyslog, sed, sensible-utils, login, passwd, libslang2, libsqlite3-0, initscripts, sysv-rc, sysvinit-utils, sysvinit, tar, tasksel-data, tasksel, info, install-info, traceroute, tzdata, libudev0, udev, bsdutils, libblkid1, libuuid1, mount, util-linux, vim-tiny, wget, libxapian22, liblzma2, xz-utils, zlib1g, less, xfsprogs, linux-base, bash-completion, ${shlibs:Depends}, ${misc:Depends}
-Recommends: canaima-escritorio-gnome
-Pre-Depends: dpkg, locales, keyboard-configuration, localepurge, ifupdown, netbase, apt, apt-utils
-Description: Paquetes que conforman una base mínima para Canaima GNU/Linux
- Este paquete provee los archivos base de Canaima GNU/Linux.
+Depends:	canaima-llaves (>= 3.1),
+		base-files (>= 6.0+canaima9),
+		lsb-base (>= 3.2-23.3canaima2),
+		lsb-release (>= 3.2-23.3canaima2),
+		vim-tiny,
+		vim-common,
+		apt,
+		base-passwd,
+		bash,
+		bsdutils,
+		coreutils,
+		dash,
+		debconf,
+		debconf-i18n,
+		debian-archive-keyring,
+		debianutils,
+		diffutils,
+		dpkg,
+		e2fslibs,
+		e2fsprogs,
+		findutils,
+		gcc-4.4-base,
+		gnupg,
+		gpgv,
+		grep,
+		gzip,
+		hostname,
+		initscripts,
+		insserv,
+		libacl1,
+		libattr1,
+		libblkid1,
+		libbz2-1.0,
+		libc-bin,
+		libc6,
+		libcomerr2,
+		libdb4.8,
+		libgcc1,
+		liblocale-gettext-perl,
+		liblzma2,
+		libncurses5,
+		libpam-modules,
+		libpam-runtime,
+		libpam0g,
+		libreadline6,
+		libselinux1,
+		libsepol1,
+		libslang2,
+		libss2,
+		libstdc++6,
+		libtext-charwidth-perl,
+		libtext-iconv-perl,
+		libtext-wrapi18n-perl,
+		libusb-0.1-4,
+		libuuid1,
+		login,
+		mawk,
+		mount,
+		ncurses-base,
+		ncurses-bin,
+		passwd,
+		perl-base,
+		readline-common,
+		sed,
+		sensible-utils,
+		sysv-rc,
+		sysvinit,
+		sysvinit-utils,
+		tar,
+		tzdata,
+		util-linux,
+		xz-utils,
+		zlib1g,
+		${shlibs:Depends},
+		${misc:Depends}
+
+Recommends: canaima-escritorio-base | canaima-servidores-base
+Description: Metapaquete que agrupa las aplicaciones básicas para Canaima
+ Este metapaquete agrupa un conjunto de aplicaciones básicas que conforman
+ una base mínima para la Metadistribución Canaima GNU/Linux.
+ .
+ Todos los sabores derivados de Canaima deben contener este metapaquete sin
+ modificaciones.

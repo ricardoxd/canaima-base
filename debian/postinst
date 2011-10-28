@@ -6,9 +6,6 @@
 # DESCRIPCIÓN: Configura el sistema despues la instalación del paquete.
 # COPYRIGHT:
 #  (C) 2010 Luis Alejandro Martínez Faneyth <martinez.faneyth@gmail.com>
-#  (C) 2010 Diego Alberto Aguilera Zambrano <daguilera85@gmail.com>
-#  (C) 2010 Carlos Alejandro Guerrero Mora <guerrerocarlos@gmail.com>
-#  (C) 2010 Francisco Javier Vásquez Guerrero <franjvasquezg@gmail.com>
 # LICENCIA: GPL3
 # ==============================================================================
 #
@@ -16,10 +13,7 @@
 # términos de la Licencia Pública General de GNU (versión 3).
 
 PKG="canaima-base"
-FSTAB="/etc/fstab"
-BORRAR_DIVERTS_21="/etc/issue /etc/bash.bashrc /etc/issue.net /etc/skel/.bashrc /etc/skel/.mozilla/firefox/canaima.default/places.sqlite /etc/skel/.mozilla/firefox/canaima.default/cert8.db /etc/skel/.mozilla/firefox/canaima.default/prefs.js /etc/skel/.mozilla/firefox/profiles.ini /var/run/motd"
-BORRAR_LENGUAJES="af am an ang ar ara as ast az az_IR bal be be@latin bem bg bn bn_IN br bs byn ca ca@valencia ckb co crh cs csb currency cy da de de_AT dv dz el en_AU en@boldquot en_CA en_GB en_NZ en@quot en@shaw en_US@piglatin eo es_CL es_CO es_CR es_DO es_EC es_GT es_HN es_MX es_NI es_PA es_PE es_PR es_SV es_UY et et_EE eu fa fi fil fo fr frp fur fy ga gez gl gn gu gv ha haw he he_IL hi hr hu hy ia id ig io is it it_IT ja jv ka kk km kn ko kok ks ku ky l10n la lb lg li lo lt lv mai mg mi mk ml mn mr ms ms_MY mt my my_MM nb nb_NO nds ne nl nn no nso oc or pa pl ps  pt_PT qu rm ro ru ru_RU rw sc si sk sl so sq sr sr@ije sr@latin sr@Latn sv sw ta te tet tg th ti tig tk tl tr tr_TR tt ug uk uk_UA ur urd ur_PK uz uz@cyrillic ve vi wa wal wo xh yi yo zh zh_CN zh_HK zh_TW zu"
-LIST="apmd anacron avahi-daemon fetchmail dns-clean atd portmap rsync exim4 kerneloops canaima-bienvenido-video cryptdisks cryptdisks-early dhcdbd fam hotkey-setup kbd keymap.sh live-initramfs ntp openvpn pppd-dns resolvconf samba screen-cleanup splashy tpconfig xdebconfigurator statd"
+
 # Color Verde
 VERDE="\e[1;32m"
 # Color Rojo
@@ -47,16 +41,6 @@ case ${1} in
 
 	configure)
 
-	ADVERTENCIA "Removiendo diverts obsoletos de Canaima 2.1"
-	for archivo in ${BORRAR_DIVERTS_21}; do
-		BASE=$(basename ${archivo})
-		dpkg-divert --package ${PKG} --remove --divert /var/lib/${PKG}/diverts/${BASE} ${archivo}
-	done
-
-	# Para resolver un bug durante la construcción de la ISO
-	[ ! -e /usr/sbin/update-burg ] && echo "#!/bin/bash" > /usr/sbin/update-burg
-	chmod +x /usr/sbin/update-burg
-
 	ADVERTENCIA "Regenerando los locales para es_VE.UTF-8"
 	echo 'LANG="es_VE.UTF-8"' > /etc/default/locale
 	echo 'LANGUAGE="es_VE:es"' >> /etc/default/locale
@@ -70,10 +54,6 @@ case ${1} in
 		locale-gen
 	fi
 
-	for lenguaje in ${BORRAR_LENGUAJES}; do
-		rm -rf /usr/share/locale/${lenguaje}
-	done
-	
 	ADVERTENCIA "Estableciendo modelo de teclado latam, pc105"	
 	sed -i "s/$( grep 'XKBMODEL' /etc/default/keyboard )/XKBMODEL='pc105'/g" /etc/default/keyboard
 	sed -i "s/$( grep 'XKBLAYOUT' /etc/default/keyboard )/XKBLAYOUT='latam'/g" /etc/default/keyboard
@@ -82,11 +62,6 @@ case ${1} in
 	[ -e /etc/apt/sources.list ] && mv /etc/apt/sources.list /etc/apt/sources.list.respaldo
 	ADVERTENCIA "Respaldando /etc/apt/preferences en /etc/apt/preferences.respaldo"
 	[ -e /etc/apt/preferences ] && mv /etc/apt/preferences /etc/apt/preferences.respaldo
-	ADVERTENCIA "Respaldando /etc/locale.nopurge en /etc/locale.nopurge.respaldo"
-	[ -e /etc/locale.nopurge ] && mv /etc/locale.nopurge /etc/locale.nopurge.respaldo
-
-	ADVERTENCIA "Borrando repositorios ocultos en /etc/apt/sources.list.d/"
-	rm -rf /etc/apt/sources.list.d/*
 
 ADVERTENCIA "Escribiendo nuevos valores en /etc/apt/sources.list"
 cat <<EOF >/etc/apt/sources.list
@@ -122,84 +97,6 @@ Pin: release o=Debian
 Pin-Priority: 100
 
 EOF
-
-ADVERTENCIA "Escribiendo nuevos valores en /etc/locale.nopurge"
-cat <<EOF >/etc/locale.nopurge
-####################################################
-# This is the configuration file for localepurge(8).
-####################################################
-
-####################################################
-# Uncommenting this string enables removal of localized
-# man pages based on the configuration information for
-# locale files defined below:
-
-MANDELETE
-
-####################################################
-# Uncommenting this string causes localepurge to simply delete
-# locales which have newly appeared on the system without
-# bothering you about it:
-
-DONTBOTHERNEWLOCALE
-
-####################################################
-# Uncommenting this string enables display of freed disk
-# space if localepurge has purged any superfluous data:
-
-#SHOWFREEDSPACE
-
-#####################################################
-# Commenting out this string enables faster but less
-# accurate calculation of freed disk space:
-
-QUICKNDIRTYCALC
-
-#####################################################
-# Commenting out this string disables verbose output:
-
-#VERBOSE
-
-#####################################################
-# Following locales won't be deleted from this system
-# after package installations done with apt-get(8):
-
-es
-es_ES.UTF-8
-es_VE
-es_VE.UTF-8
-
-EOF
-
-	ADVERTENCIA "Reconfigurando localepurge"
-	export DEBIAN_FRONTEND="noninteractive"
-	dpkg-reconfigure -fnoninteractive localepurge
-
-	ADVERTENCIA "Removiendo scripts de inicio usualmente innecesarios"
-
-	for list in ${LIST}; do
-		update-rc.d -f ${list} remove
-		rm -rf /etc/init.d/${list}
-	done
-
-	if [ -e /etc/default/rcS ]; then
-		ADVERTENCIA "Cambiando la forma de carga de las dependencias iniciales del sistema (CONCURRENCY=makefile)"
-		[ -z $( grep "CONCURRENCY=makefile" /etc/default/rcS ) ] && echo 'CONCURRENCY=makefile' >> /etc/default/rcS
-	fi
-
-	if [ -e /etc/sysctl.conf ]; then
-		ADVERTENCIA "Reduciendo la cantidad de procesos que se swapean, la RAM es más rápida (vm.swappiness)"
-		[ -z $( grep "vm.swappiness=10" /etc/sysctl.conf ) ] && echo 'vm.swappiness=10' >> /etc/sysctl.conf
-	fi
-
-	if [ -e /etc/inittab ];	then
-		ADVERTENCIA "Reduciendo cantidad de TTY'S a 2, el usuario no las usa todas en realidad"
-		sed -i 's/3:23:respawn:\/sbin\/getty/#3:23:respawn:\/sbin\/getty/g' /etc/inittab
-		sed -i 's/4:23:respawn:\/sbin\/getty/#4:23:respawn:\/sbin\/getty/g' /etc/inittab
-		sed -i 's/5:23:respawn:\/sbin\/getty/#5:23:respawn:\/sbin\/getty/g' /etc/inittab
-		sed -i 's/6:23:respawn:\/sbin\/getty/#6:23:respawn:\/sbin\/getty/g' /etc/inittab
-	fi
-
 	;;
 
 	abort-upgrade|abort-remove|abort-deconfigure)
