@@ -86,7 +86,6 @@ Depends:	canaima-llaves (>= 3.1),
 		zlib1g,
 		${shlibs:Depends},
 		${misc:Depends}
-
 Recommends: canaima-escritorio-base | canaima-servidores-base
 Description: Metapaquete que agrupa las aplicaciones básicas para Canaima
  Este metapaquete agrupa un conjunto de aplicaciones básicas que conforman
