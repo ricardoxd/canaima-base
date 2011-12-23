@@ -1,3 +1,10 @@
+canaima-base (3.1-5) stable; urgency=low
+
+  * [857afae] * Ajustando dependencias y scripts del mantenedor
+  * [12ae5d1] Ajustando Pre-Depends
+
+ -- Luis Alejandro Martínez Faneyth <martinez.faneyth@gmail.com>  Fri, 23 Dec 2011 11:21:53 -0430
+
 canaima-base (3.1-4) stable; urgency=low
 
   * [88fca80] Agregando herramienta less.
