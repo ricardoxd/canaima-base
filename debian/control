@@ -84,7 +84,7 @@ Depends:	canaima-llaves (>= 3.1),
 		zlib1g,
 		${shlibs:Depends},
 		${misc:Depends}
-Pre-Depends: dpkg, locales, keyboard-configuration, netbase, apt, apt-utils
+Pre-Depends: dpkg (>= 1.15.8.10), locales, keyboard-configuration, netbase, apt, apt-utils
 Suggests: canaima-escritorio-base | canaima-servidores-base
 Description: Metapaquete que agrupa las aplicaciones básicas para Canaima
  Este metapaquete agrupa un conjunto de aplicaciones básicas que conforman
