@@ -19,6 +19,22 @@ PKG="canaima-base"
 case ${1} in
 
 	purge|remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+
+	ADVERTENCIA "Restaurando antiguo /etc/default/locale"
+	[ -e /etc/default/locale.respaldo ] && mv /etc/default/locale.respaldo /etc/default/locale
+        
+	ADVERTENCIA "Restaurando antiguo /etc/locale.gen"
+	[ -e /etc/locale.gen.respaldo ] && mv /etc/locale.gen.respaldo /etc/locale.gen
+
+	ADVERTENCIA "Restaurando antiguo /etc/default/keyboard"
+	[ -e /etc/default/keyboard.respaldo ] && mv /etc/default/keyboard.respaldo /etc/default/keyboard
+
+	ADVERTENCIA "Restaurando antiguo /etc/apt/sources.list"
+	[ -e /etc/apt/sources.list.respaldo ] && mv /etc/apt/sources.list.respaldo /etc/apt/sources.list
+
+	ADVERTENCIA "Restaurando antiguo /etc/apt/preferences"
+	[ -e /etc/apt/preferences.respaldo ] && mv /etc/apt/preferences.respaldo /etc/apt/preferences
+
 	;;
 
 	*)
@@ -32,3 +48,4 @@ esac
 #DEBHELPER#
 
 exit 0
+

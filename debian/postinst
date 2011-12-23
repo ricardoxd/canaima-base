@@ -41,6 +41,22 @@ case ${1} in
 
 	configure)
 
+	ADVERTENCIA "Respaldando /etc/default/locale en /etc/default/locale.respaldo"
+	[ -e /etc/default/locale ] && mv /etc/default/locale /etc/default/locale.respaldo
+
+	ADVERTENCIA "Respaldando /etc/locale.gen en /etc/locale.gen.respaldo"
+	[ -e /etc/locale.gen ] && mv /etc/locale.gen /etc/locale.gen.respaldo
+
+	ADVERTENCIA "Respaldando /etc/default/keyboard en /etc/default/keyboard.respaldo"
+	[ -e /etc/default/keyboard ] && mv /etc/default/keyboard /etc/default/keyboard.respaldo
+
+	ADVERTENCIA "Respaldando /etc/apt/sources.list en /etc/apt/sources.list.respaldo"
+	[ -e /etc/apt/sources.list ] && mv /etc/apt/sources.list /etc/apt/sources.list.respaldo
+
+	ADVERTENCIA "Respaldando /etc/apt/preferences en /etc/apt/preferences.respaldo"
+	[ -e /etc/apt/preferences ] && mv /etc/apt/preferences /etc/apt/preferences.respaldo
+
+
 	ADVERTENCIA "Regenerando los locales para es_VE.UTF-8"
 	echo 'LANG="es_VE.UTF-8"' > /etc/default/locale
 	echo 'LANGUAGE="es_VE:es"' >> /etc/default/locale
@@ -50,18 +66,13 @@ case ${1} in
 	export LANGUAGE="es_VE:es"
 	export LANG="es_VE.UTF-8"
 
-	if [ -x $( which locale-gen ) ]; then
+	if [ -x "$( which locale-gen )" ]; then
 		locale-gen
 	fi
 
 	ADVERTENCIA "Estableciendo modelo de teclado latam, pc105"	
 	sed -i "s/$( grep 'XKBMODEL' /etc/default/keyboard )/XKBMODEL='pc105'/g" /etc/default/keyboard
 	sed -i "s/$( grep 'XKBLAYOUT' /etc/default/keyboard )/XKBLAYOUT='latam'/g" /etc/default/keyboard
-
-	ADVERTENCIA "Respaldando /etc/apt/sources.list en /etc/apt/sources.list.respaldo"
-	[ -e /etc/apt/sources.list ] && mv /etc/apt/sources.list /etc/apt/sources.list.respaldo
-	ADVERTENCIA "Respaldando /etc/apt/preferences en /etc/apt/preferences.respaldo"
-	[ -e /etc/apt/preferences ] && mv /etc/apt/preferences /etc/apt/preferences.respaldo
 
 ADVERTENCIA "Escribiendo nuevos valores en /etc/apt/sources.list"
 cat <<EOF >/etc/apt/sources.list
@@ -70,13 +81,13 @@ cat <<EOF >/etc/apt/sources.list
 #
 
 # Repositorio Estable
-#deb http://repositorio.canaima.softwarelibre.gob.ve/ aponwao usuarios
+#deb http://repositorio.canaima.softwarelibre.gob.ve/ roraima usuarios
 
 # Repositorio de Pruebas
-deb http://repositorio.canaima.softwarelibre.gob.ve/ roraima usuarios
+deb http://repositorio.canaima.softwarelibre.gob.ve/ auyantepui usuarios
 
 # Repositorio de Desarrollo
-#deb http://repositorio.canaima.softwarelibre.gob.ve/ auyantepui usuarios
+#deb http://repositorio.canaima.softwarelibre.gob.ve/ kukenan usuarios
 
 # Repositorio de la Base (Debian)
 deb http://universo.canaima.softwarelibre.gob.ve/ squeeze main contrib non-free
