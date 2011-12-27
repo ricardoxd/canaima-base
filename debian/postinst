@@ -80,13 +80,13 @@ cat <<EOF >/etc/apt/sources.list
 # Repositorios de Canaima GNU/Linux
 #
 
-# Repositorio Estable
+# Repositorio Estable (3.0)
 #deb http://repositorio.canaima.softwarelibre.gob.ve/ roraima usuarios
 
-# Repositorio de Pruebas
+# Repositorio de Pruebas (3.1)
 deb http://repositorio.canaima.softwarelibre.gob.ve/ auyantepui usuarios
 
-# Repositorio de Desarrollo
+# Repositorio de Desarrollo (3.2)
 #deb http://repositorio.canaima.softwarelibre.gob.ve/ kukenan usuarios
 
 # Repositorio de la Base (Debian)
