@@ -42,19 +42,19 @@ case ${1} in
 	configure)
 
 	ADVERTENCIA "Respaldando /etc/default/locale en /etc/default/locale.respaldo"
-	[ -e /etc/default/locale ] && mv /etc/default/locale /etc/default/locale.respaldo
+	[ -e /etc/default/locale ] && cp /etc/default/locale /etc/default/locale.respaldo
 
 	ADVERTENCIA "Respaldando /etc/locale.gen en /etc/locale.gen.respaldo"
-	[ -e /etc/locale.gen ] && mv /etc/locale.gen /etc/locale.gen.respaldo
+	[ -e /etc/locale.gen ] && cp /etc/locale.gen /etc/locale.gen.respaldo
 
 	ADVERTENCIA "Respaldando /etc/default/keyboard en /etc/default/keyboard.respaldo"
-	[ -e /etc/default/keyboard ] && mv /etc/default/keyboard /etc/default/keyboard.respaldo
+	[ -e /etc/default/keyboard ] && cp /etc/default/keyboard /etc/default/keyboard.respaldo
 
 	ADVERTENCIA "Respaldando /etc/apt/sources.list en /etc/apt/sources.list.respaldo"
-	[ -e /etc/apt/sources.list ] && mv /etc/apt/sources.list /etc/apt/sources.list.respaldo
+	[ -e /etc/apt/sources.list ] && cp /etc/apt/sources.list /etc/apt/sources.list.respaldo
 
 	ADVERTENCIA "Respaldando /etc/apt/preferences en /etc/apt/preferences.respaldo"
-	[ -e /etc/apt/preferences ] && mv /etc/apt/preferences /etc/apt/preferences.respaldo
+	[ -e /etc/apt/preferences ] && cp /etc/apt/preferences /etc/apt/preferences.respaldo
 
 
 	ADVERTENCIA "Regenerando los locales para es_VE.UTF-8"
@@ -85,12 +85,15 @@ cat <<EOF >/etc/apt/sources.list
 
 # Repositorio de Pruebas (3.1)
 deb http://repositorio.canaima.softwarelibre.gob.ve/ auyantepui usuarios
+#deb-src http://repositorio.canaima.softwarelibre.gob.ve/ auyantepui usuarios
 
 # Repositorio de Desarrollo (3.2)
 #deb http://repositorio.canaima.softwarelibre.gob.ve/ kukenan usuarios
+#deb-src http://repositorio.canaima.softwarelibre.gob.ve/ kukenan usuarios
 
 # Repositorio de la Base (Debian)
 deb http://universo.canaima.softwarelibre.gob.ve/ squeeze main contrib non-free
+#deb-src http://universo.canaima.softwarelibre.gob.ve/ squeeze main contrib non-free
 
 # Repositorio de actualizaciones de Emergencia
 deb http://seguridad.canaima.softwarelibre.gob.ve/ seguridad usuarios
