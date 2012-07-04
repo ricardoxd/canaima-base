@@ -1,3 +1,12 @@
+canaima-base (3.1-9) stable; urgency=low
+
+  * [547b364] Sustituyendo procedimientos de postinstall por
+    alternativas.
+  * [2397372] Agregando force a update-alternatives para forzar la
+    sobreescritura de alternativas.
+
+ -- Luis Alejandro Martínez Faneyth <luis@huntingbears.com.ve>  Wed, 04 Jul 2012 15:45:30 -0430
+
 canaima-base (3.1-8) stable; urgency=low
 
   * [b00eb5e] Corrigiendo error en el postinst
