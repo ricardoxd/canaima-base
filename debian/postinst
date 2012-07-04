@@ -32,7 +32,7 @@ case ${1} in
 		for ALT in ${ALTERNATIVES}; do
 			ALTNAME="$( basename "${ALT}" )"
 			ADVERTENCIA "Añadiendo alternativa para el archivo \"${ALT}\" ..."
-			update-alternatives --install "${ALT}" "${ALTNAME}" "/usr/share/canaima-base/${ALTNAME}" 60
+			update-alternatives --force --install "${ALT}" "${ALTNAME}" "/usr/share/canaima-base/${ALTNAME}" 60
 		done
 	;;
 

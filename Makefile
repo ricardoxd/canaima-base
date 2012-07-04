@@ -8,15 +8,13 @@ all: test build
 
 test:
 
-	@echo -n "\n===== Comprobando posibles errores de sintaxis en los scripts de mantenedor =====\n\n"
-
-	@for SCRIPT in $(SCRIPTS); \
-	do \
-		echo -n "$${SCRIPT}\n"; \
-		bash -n $${SCRIPT}; \
+	@printf "Comprobando sintaxis de los scripts de shell ["
+	@for SCRIPT in $(SCRIPTS); do \
+		sh -n $${SCRIPT}; \
+		checkbashisms -f -x $${SCRIPT} || true; \
+		printf "."; \
 	done
-
-	@echo -n "\n=================================================================================\nHECHO!\n\n"
+	@printf "]\n"
 
 build:
 
@@ -24,12 +22,12 @@ build:
 
 install:
 
-	mkdir -p $(DESTDIR)/usr/share/canaima-base
-	cp -r config/* $(DESTDIR)/usr/share/canaima-base/
+	@mkdir -p $(DESTDIR)/usr/share/canaima-base
+	@cp alternatives/* $(DESTDIR)/usr/share/canaima-base/
 
 uninstall:
 
-	rm -rf $(DESTDIR)/usr/share/canaima-base
+	@rm -rf $(DESTDIR)/usr/share/canaima-base
 
 clean:
 
