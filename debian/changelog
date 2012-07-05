@@ -1,3 +1,9 @@
+canaima-base (3.1-13) stable; urgency=low
+
+  * [c48752f] Removiendo initscripts de las dependencias.
+
+ -- Luis Alejandro Martínez Faneyth <luis@huntingbears.com.ve>  Thu, 05 Jul 2012 17:58:20 -0430
+
 canaima-base (3.1-12) stable; urgency=low
 
   * [4bca0e2] Agregando Pre-Depends a initscripts.
