@@ -34,6 +34,11 @@ case ${1} in
 			ADVERTENCIA "Añadiendo alternativa para el archivo \"${ALT}\" ..."
 			update-alternatives --force --install "${ALT}" "${ALTNAME}" "/usr/share/canaima-base/${ALTNAME}" 60
 		done
+
+		if [ -x "$( which locale-gen )" ]; then
+			ADVERTENCIA "Regenerando locales ..."
+			locale-gen
+		fi
 	;;
 
 	abort-upgrade|abort-remove|abort-deconfigure)
