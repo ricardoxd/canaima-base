@@ -37,11 +37,11 @@ case ${1} in
 			fi
 
 			if which ucf >/dev/null; then
-				ucf "/usr/share/canaima-base/alternatives/${ALTNAME}" "/etc/canaima-base/alternatives/${ALTNAME}"
+				ucf -v "/usr/share/canaima-base/alternatives/${ALTNAME}" "/etc/canaima-base/alternatives/${ALTNAME}"
 			fi
 
 			if which ucfr >/dev/null; then
-				ucfr canaima-base "/etc/canaima-base/alternatives/${ALTNAME}"
+				ucfr -v canaima-base "/etc/canaima-base/alternatives/${ALTNAME}"
 			fi
 
 			ADVERTENCIA "Añadiendo alternativa para el archivo \"${ALT}\" ..."
