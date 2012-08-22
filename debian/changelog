@@ -5,8 +5,9 @@ canaima-base (3.1-16) stable; urgency=low
     con ucf/ucfr.
   * [04b7497] Asegurando que existen los archivos antes de actualizarlos
     con ucf/ucfr.
+  * [88ddafa] Arreglando configuración con ucf.
 
- -- Luis Alejandro Martínez Faneyth <luis@huntingbears.com.ve>  Wed, 22 Aug 2012 15:45:47 -0430
+ -- Luis Alejandro Martínez Faneyth <luis@huntingbears.com.ve>  Wed, 22 Aug 2012 16:06:10 -0430
 
 canaima-base (3.1-15) stable; urgency=low
 
