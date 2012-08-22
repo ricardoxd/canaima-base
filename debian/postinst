@@ -31,8 +31,16 @@ case ${1} in
 
 		for ALT in ${ALTERNATIVES}; do
 			ALTNAME="$( basename "${ALT}" )"
+			if which ucf >/dev/null; then
+				ucf --debconf-ok "/usr/share/canaima-base/alternatives/${ALTNAME}" "/etc/canaima-base/alternatives/${ALTNAME}"
+			fi
+
+			if which ucfr >/dev/null; then
+				ucfr canaima-base "/etc/canaima-base/alternatives/${ALTNAME}"
+			fi
+
 			ADVERTENCIA "Añadiendo alternativa para el archivo \"${ALT}\" ..."
-			update-alternatives --force --install "${ALT}" "${ALTNAME}" "/usr/share/canaima-base/${ALTNAME}" 60
+			update-alternatives --force --install "${ALT}" "${ALTNAME}" "/etc/canaima-base/alternatives/${ALTNAME}" 60
 		done
 
 		if [ -x "$( which locale-gen )" ]; then

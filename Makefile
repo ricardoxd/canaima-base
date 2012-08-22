@@ -2,7 +2,7 @@
 
 SHELL := sh -e
 
-SCRIPTS = debian/postinst debian/prerm
+SCRIPTS = debian/postinst debian/postrm
 
 all: test build
 
@@ -23,7 +23,7 @@ build:
 install:
 
 	@mkdir -p $(DESTDIR)/usr/share/canaima-base
-	@cp alternatives/* $(DESTDIR)/usr/share/canaima-base/
+	@cp -r alternatives $(DESTDIR)/usr/share/canaima-base/
 
 uninstall:
 
