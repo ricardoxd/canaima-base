@@ -31,17 +31,12 @@ case ${1} in
 		for ALT in ${ALTERNATIVES}; do
 			ALTNAME="$( basename "${ALT}" )"
 
-			if [ ! -e "/etc/canaima-base/alternatives/${ALTNAME}" ]; then
-				mkdir -p "/etc/canaima-base/alternatives/"
-				touch "/etc/canaima-base/alternatives/${ALTNAME}"
-			fi
-
 			if which ucf >/dev/null; then
-				ucf -v "/usr/share/canaima-base/alternatives/${ALTNAME}" "/etc/canaima-base/alternatives/${ALTNAME}"
+				ucf "/usr/share/canaima-base/alternatives/${ALTNAME}" "/etc/canaima-base/alternatives/${ALTNAME}"
 			fi
 
 			if which ucfr >/dev/null; then
-				ucfr -v canaima-base "/etc/canaima-base/alternatives/${ALTNAME}"
+				ucfr canaima-base "/etc/canaima-base/alternatives/${ALTNAME}"
 			fi
 
 			ADVERTENCIA "Añadiendo alternativa para el archivo \"${ALT}\" ..."

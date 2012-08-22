@@ -33,9 +33,6 @@ case ${1} in
 		for ALT in ${ALTERNATIVES}; do
 			ALTNAME="$( basename "${ALT}" )"
 
-			ADVERTENCIA "Removiendo alternativa para el archivo \"${ALT}\" ..."
-			update-alternatives --remove "${ALTNAME}" "/etc/canaima-base/alternatives/${ALTNAME}"
-
 			if which ucf >/dev/null; then
 				ucf --purge "/etc/canaima-base/alternatives/${ALTNAME}"
 			fi
@@ -43,8 +40,6 @@ case ${1} in
 			if which ucfr >/dev/null; then
 				ucfr --purge canaima-base "/etc/canaima-base/alternatives/${ALTNAME}"
 			fi
-
-			rm -rf "/etc/canaima-base/alternatives/${ALTNAME}"
 		done
 	;;
 
