@@ -3,8 +3,10 @@ canaima-base (3.1-16) stable; urgency=low
   * [5611203] Reactivando generación de locales.
   * [1892ab5] Moviendo alternativas a /etc y gestionando actualizaciones
     con ucf/ucfr.
+  * [04b7497] Asegurando que existen los archivos antes de actualizarlos
+    con ucf/ucfr.
 
- -- Luis Alejandro Martínez Faneyth <luis@huntingbears.com.ve>  Wed, 22 Aug 2012 15:19:03 -0430
+ -- Luis Alejandro Martínez Faneyth <luis@huntingbears.com.ve>  Wed, 22 Aug 2012 15:45:47 -0430
 
 canaima-base (3.1-15) stable; urgency=low
 
