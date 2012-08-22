@@ -1,8 +1,9 @@
 canaima-base (3.1-18) stable; urgency=low
 
   * [a330125] Arreglando configuración con ucf.
+  * [d4d190e] Arreglando configuración con ucf.
 
- -- Luis Alejandro Martínez Faneyth <luis@huntingbears.com.ve>  Wed, 22 Aug 2012 16:36:08 -0430
+ -- Luis Alejandro Martínez Faneyth <luis@huntingbears.com.ve>  Wed, 22 Aug 2012 16:38:43 -0430
 
 canaima-base (3.1-17) stable; urgency=low
 
