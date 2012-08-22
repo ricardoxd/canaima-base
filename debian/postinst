@@ -28,9 +28,14 @@ ALTERNATIVES="/etc/apt/sources.list /etc/default/locale /etc/locale.gen /etc/def
 
 case ${1} in
 	configure|'')
-
 		for ALT in ${ALTERNATIVES}; do
 			ALTNAME="$( basename "${ALT}" )"
+
+			if [ ! -e "/etc/canaima-base/alternatives/${ALTNAME}" ]; then
+				mkdir -p "/etc/canaima-base/alternatives/"
+				touch "/etc/canaima-base/alternatives/${ALTNAME}"
+			fi
+
 			if which ucf >/dev/null; then
 				ucf --debconf-ok "/usr/share/canaima-base/alternatives/${ALTNAME}" "/etc/canaima-base/alternatives/${ALTNAME}"
 			fi
