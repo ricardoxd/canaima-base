@@ -37,7 +37,7 @@ case ${1} in
 			fi
 
 			if which ucf >/dev/null; then
-				ucf --debconf-ok "/usr/share/canaima-base/alternatives/${ALTNAME}" "/etc/canaima-base/alternatives/${ALTNAME}"
+				ucf "/usr/share/canaima-base/alternatives/${ALTNAME}" "/etc/canaima-base/alternatives/${ALTNAME}"
 			fi
 
 			if which ucfr >/dev/null; then
