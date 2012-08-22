@@ -32,16 +32,19 @@ case ${1} in
 	purge|upgrade|remove|failed-upgrade|abort-install|abort-upgrade|disappear|'')
 		for ALT in ${ALTERNATIVES}; do
 			ALTNAME="$( basename "${ALT}" )"
+
+			ADVERTENCIA "Removiendo alternativa para el archivo \"${ALT}\" ..."
+			update-alternatives --remove "${ALTNAME}" "/etc/canaima-base/alternatives/${ALTNAME}"
+
 			if which ucf >/dev/null; then
-				ucf --debconf-ok --purge "/etc/canaima-base/alternatives/${ALTNAME}"
+				ucf --purge "/etc/canaima-base/alternatives/${ALTNAME}"
 			fi
 
 			if which ucfr >/dev/null; then
 				ucfr --purge canaima-base "/etc/canaima-base/alternatives/${ALTNAME}"
 			fi
 
-			ADVERTENCIA "Removiendo alternativa para el archivo \"${ALT}\" ..."
-			update-alternatives --remove "${ALTNAME}" "/etc/canaima-base/alternatives/${ALTNAME}"
+			rm -rf "/etc/canaima-base/alternatives/${ALTNAME}"
 		done
 	;;
 
