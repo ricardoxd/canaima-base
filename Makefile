@@ -23,6 +23,7 @@ build:
 install:
 
 	@mkdir -p $(DESTDIR)/usr/share/canaima-base
+	@mkdir -p $(DESTDIR)/etc/canaima-base/alternatives
 	@cp -r alternatives $(DESTDIR)/usr/share/canaima-base/
 
 uninstall:
