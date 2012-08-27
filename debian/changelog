@@ -1,3 +1,10 @@
+canaima-base (3.1-19) stable; urgency=low
+
+  * [a766683] Generando la carpeta /etc/canaima-base/alternatives dentro
+    del paquete.
+
+ -- Luis Alejandro Martínez Faneyth <luis@huntingbears.com.ve>  Mon, 27 Aug 2012 14:13:22 -0430
+
 canaima-base (3.1-18) stable; urgency=low
 
   * [a330125] Arreglando configuración con ucf.
