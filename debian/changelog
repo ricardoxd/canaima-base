@@ -2,8 +2,10 @@ canaima-base (3.1-19) stable; urgency=low
 
   * [a766683] Generando la carpeta /etc/canaima-base/alternatives dentro
     del paquete.
+  * [2f70e40] Añadiendo ucf a los Pre-Depends para que el postinst
+    funcione en entornos mínimos.
 
- -- Luis Alejandro Martínez Faneyth <luis@huntingbears.com.ve>  Mon, 27 Aug 2012 14:13:22 -0430
+ -- Luis Alejandro Martínez Faneyth <luis@huntingbears.com.ve>  Wed, 29 Aug 2012 12:27:51 -0430
 
 canaima-base (3.1-18) stable; urgency=low
 
