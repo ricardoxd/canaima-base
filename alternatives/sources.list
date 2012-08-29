@@ -2,10 +2,10 @@
 # Repositorios de Canaima GNU/Linux
 #
 
-# Repositorio Estable (3.0)
+# Repositorio Antiguo (3.0)
 #deb http://paquetes.canaima.softwarelibre.gob.ve/ roraima main aportes no-libres
 
-# Repositorio de Pruebas (3.1)
+# Repositorio Estable (3.1)
 deb http://paquetes.canaima.softwarelibre.gob.ve/ auyantepui main aportes no-libres
 #deb-src http://paquetes.canaima.softwarelibre.gob.ve/ auyantepui main aportes no-libres
 
