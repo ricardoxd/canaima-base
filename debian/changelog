@@ -1,4 +1,4 @@
-canaima-base (3.0+46) unstable; urgency=low
+canaima-base (3.2-2) unstable; urgency=low
 
   * [75bf194] Quitando escritorios inexistentes del Recommends en
     debian/control
