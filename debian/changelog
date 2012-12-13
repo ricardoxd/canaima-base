@@ -7,10 +7,13 @@ canaima-base (3.1-21) stable; urgency=low
 
 canaima-base (3.1-20) stable; urgency=low
 
+  [ Luis Alejandro Martínez Faneyth ]
   * [ae6723e] Ajustando el sources.list para reflejar el nuevo release
     estable.
 
- -- Luis Alejandro Martínez Faneyth <luis@huntingbears.com.ve>  Wed, 29 Aug 2012 12:32:12 -0430
+  [ Francisco Javier Vásquez Guerrero ]
+
+ -- Francisco Javier Vásquez Guerrero <franjvasquezg@gmail.com>  Wed, 10 Oct 2012 10:11:31 -0430
 
 canaima-base (3.1-19) stable; urgency=low
 
