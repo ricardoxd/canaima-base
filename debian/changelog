@@ -1,3 +1,10 @@
+canaima-base (3.1-21) stable; urgency=low
+
+  * [7187d1e] Corrigiendo typo en alternativa para
+    /etc/defaults/keyboard
+
+ -- Luis Alejandro Martínez Faneyth <luis@huntingbears.com.ve>  Thu, 13 Dec 2012 14:45:48 -0430
+
 canaima-base (3.1-20) stable; urgency=low
 
   * [ae6723e] Ajustando el sources.list para reflejar el nuevo release
