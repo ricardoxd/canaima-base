@@ -3,8 +3,9 @@ canaima-base (3.1-21) stable; urgency=low
   * [7187d1e] Corrigiendo typo en alternativa para
     /etc/defaults/keyboard
   * [097da7a] Corrigiendo sources.listx
+  * [4760709] Corrigiendo campo del mantenedor.
 
- -- Luis Alejandro Martínez Faneyth <luis@huntingbears.com.ve>  Thu, 13 Dec 2012 14:54:52 -0430
+ -- Luis Alejandro Martínez Faneyth <luis@huntingbears.com.ve>  Thu, 13 Dec 2012 14:59:44 -0430
 
 canaima-base (3.1-20) stable; urgency=low
 
