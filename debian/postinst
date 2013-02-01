@@ -105,8 +105,6 @@ deb http://repositorio.canaima.softwarelibre.gob.ve/ auyantepui usuarios
 # Repositorio de la Base (Debian)
 deb http://universo.canaima.softwarelibre.gob.ve/ squeeze main contrib non-free
 
-# Repositorio de actualizaciones de Emergencia
-deb http://seguridad.canaima.softwarelibre.gob.ve/ seguridad usuarios
 
 EOF
 
