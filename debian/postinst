@@ -96,11 +96,11 @@ cat <<EOF >/etc/apt/sources.list
 deb http://vit.canaima.softwarelibre.gob.ve/ roraima usuarios
 
 
-# Repositorio roraima (3.0) 
-deb http://repositorio.canaima.softwarelibre.gob.ve/ roraima usuarios
+# Repositorio roraima (3.1) 
+deb http://repositorio.canaima.softwarelibre.gob.ve/ auyantepui usuarios
 
 # Repositorio de Desarrollo
-#deb http://repositorio.canaima.softwarelibre.gob.ve/ auyantepui usuarios
+#deb http://repositorio.canaima.softwarelibre.gob.ve/ kerepakupai usuarios
 
 # Repositorio de la Base (Debian)
 deb http://universo.canaima.softwarelibre.gob.ve/ squeeze main contrib non-free
