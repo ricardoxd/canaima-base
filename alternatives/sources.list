@@ -6,7 +6,7 @@
 #deb http://paquetes.canaima.softwarelibre.gob.ve/ roraima main aportes no-libres
 
 # Repositorio roraima VIT
-deb http://vit.canaima.softwarelibre.gob.ve/ roraima usuarios
+deb http://vit.canaima.softwarelibre.gob.ve/repositorio/ roraima usuarios
 
 # Repositorio Estable (3.1)
 deb http://paquetes.canaima.softwarelibre.gob.ve/ auyantepui main aportes no-libres
