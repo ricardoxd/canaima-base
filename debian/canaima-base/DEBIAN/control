@@ -1,0 +1,17 @@
+Package: canaima-base
+Version: 3.2-2
+Architecture: all
+Maintainer: Equipo de Desarrollo de Canaima GNU/Linux <desarrolladores@canaima.softwarelibre.gob.ve>
+Installed-Size: 84
+Pre-Depends: dpkg (>= 1.15.8.10), locales, keyboard-configuration, netbase, apt, apt-utils, ucf
+Depends: canaima-llaves (>= 3.1), base-files (>= 6.0.1-1canaima11), lsb-base (>= 3.2-23.3canaima3), lsb-release (>= 3.2-23.3canaima3), vim-tiny, vim-common, base-passwd (>= 3.5.22), bash (>= 4.1-3), bsdutils (>= 1:2.17.2-9), coreutils (>= 8.5-1), dash, debconf, debconf-i18n, debian-archive-keyring, debianutils (>= 3.4), diffutils, e2fslibs, e2fsprogs (>= 1.41.12-2), findutils (>= 4.4.2-1+b1), gcc-4.4-base, gnupg, gpgv, grep (>= 2.6.3-3), gzip (>= 1.3.12-9), hostname (>= 3.04), insserv, initscripts, less, libacl1, libattr1, libblkid1, libbz2-1.0, libc-bin, libcomerr2, libdb4.8, libgcc1, liblocale-gettext-perl, liblzma2, libncurses5, libpam-modules, libpam-runtime, libpam0g, libreadline6, libselinux1, libsepol1, libslang2, libss2, libstdc++6, libtext-charwidth-perl, libtext-iconv-perl, libtext-wrapi18n-perl, libusb-0.1-4, libuuid1, login (>= 1:4.1.4.2+svn3283-2+squeeze1), mawk, mount (>= 2.17.2-9), ncurses-base (>= 5.7+20100313-5), ncurses-bin (>= 5.7+20100313-5), passwd, perl-base (>= 5.10.1-17), readline-common, sed (>= 4.2.1-7), sensible-utils, sysv-rc, sysvinit (>= 2.88dsf-13.1), sysvinit-utils (>= 2.88dsf-13.1), tar (>= 1.23-3), tzdata, util-linux (>= 2.17.2-9), xz-utils, zlib1g
+Suggests: canaima-escritorio-base | canaima-servidores-base
+Section: misc
+Priority: optional
+Homepage: http://canaima.softwarelibre.gob.ve/
+Description: Metapaquete que agrupa las aplicaciones básicas para Canaima
+ Este metapaquete agrupa un conjunto de aplicaciones básicas que conforman
+ una base mínima para la Metadistribución Canaima GNU/Linux.
+ .
+ Todos los sabores derivados de Canaima deben contener este metapaquete sin
+ modificaciones.
