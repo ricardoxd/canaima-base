@@ -29,6 +29,13 @@ ALTERNATIVES="/etc/apt/sources.list /etc/default/locale /etc/locale.gen /etc/def
 
 case ${1} in
 	configure|'')
+
+	if [ -e /etc/burg.d/10_linux ]; then
+               sed -i -e 's/%s (Consola)/Canaima GNU\/Linux 3.1 (Consola)/g' /etc/burg.d/10_linux
+               sed -i -e's/%s/Canaima GNU\/Linux 3.1/g' /etc/burg.d/10_linux
+        fi
+
+
 		for ALT in ${ALTERNATIVES}; do
 			ALTNAME="$( basename "${ALT}" )"
 
