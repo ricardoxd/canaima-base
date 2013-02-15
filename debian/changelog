@@ -6,8 +6,9 @@ canaima-base (3.2-3) unstable; urgency=low
     vit.canaima.softwarelibre.gob.ve/repositorio/
   * [7b7cf75] agregando configuracion de burg
   * [23ee650] aumentado version
+  * [dab759d] aumentado version
 
- -- Sasha Veronica Solano Gros-jean <sashasolano@gmail.com>  Fri, 15 Feb 2013 10:58:09 -0430
+ -- Sasha Veronica Solano Gros-jean <sashasolano@gmail.com>  Fri, 15 Feb 2013 11:04:29 -0430
 
 canaima-base (3.2-2) unstable; urgency=low
 
