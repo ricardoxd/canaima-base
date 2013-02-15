@@ -1,3 +1,14 @@
+canaima-base (3.2-3) unstable; urgency=low
+
+  * [47e8919] quitando repositorio de seguridad
+  * [7917fa3] modificando canaima base de 3.0 a 3.1
+  * [58bf4bf] arreglando vit.canaima.softwarelibre.gob.ve a
+    vit.canaima.softwarelibre.gob.ve/repositorio/
+  * [7b7cf75] agregando configuracion de burg
+  * [23ee650] aumentado version
+
+ -- Sasha Veronica Solano Gros-jean <sashasolano@gmail.com>  Fri, 15 Feb 2013 10:58:09 -0430
+
 canaima-base (3.2-2) unstable; urgency=low
 
   * [75bf194] Quitando escritorios inexistentes del Recommends en
