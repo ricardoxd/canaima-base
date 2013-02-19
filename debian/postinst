@@ -55,6 +55,10 @@ case ${1} in
 			ADVERTENCIA "Regenerando locales ..."
 			locale-gen
 		fi
+                if [ -n "$( which update-burg )" ] && [ -x "$( which update-burg )" ]; then
+		    sync
+		    update-burg || true
+	        fi
 	;;
 
 	abort-upgrade|abort-remove|abort-deconfigure)
