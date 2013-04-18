@@ -1,3 +1,11 @@
+canaima-base (4.0-1~1.gbp361d6c) UNRELEASED; urgency=low
+
+  ** SNAPSHOT build @361d6c7cc951cc51759fdfc6bb10843391eb2bad **
+
+  * [361d6c7] Removiendo configuraciones específicas atadas a idiomas y distribuciones de teclado de Venezuela. Removiendo procesos de postinstalación, preremoción y postremoción. Adaptando debian/rules y Makefile a nueva estructura. Actualizando dependencias para la nueva base: Debian Wheezy. Actualizando estándares. Limpieza y preparación general para la versión 4.0 de Canaima.
+
+ -- Luis Alejandro Martínez Faneyth <luis@huntingbears.com.ve>  Thu, 18 Apr 2013 11:09:51 -0430
+
 canaima-base (3.1-21) stable; urgency=low
 
   * [7187d1e] Corrigiendo typo en alternativa para
