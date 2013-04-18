@@ -2,19 +2,11 @@
 
 SHELL := sh -e
 
-SCRIPTS = debian/postinst debian/postrm
-
 all: test build
 
 test:
 
-	@printf "Comprobando sintaxis de los scripts de shell ["
-	@for SCRIPT in $(SCRIPTS); do \
-		sh -n $${SCRIPT}; \
-		checkbashisms -f -x $${SCRIPT} || true; \
-		printf "."; \
-	done
-	@printf "]\n"
+	@echo "Nada para probar!"
 
 build:
 
@@ -22,13 +14,11 @@ build:
 
 install:
 
-	@mkdir -p $(DESTDIR)/usr/share/canaima-base
-	@mkdir -p $(DESTDIR)/etc/canaima-base/alternatives
-	@cp -r alternatives $(DESTDIR)/usr/share/canaima-base/
+	@echo "Nada para instalar!"
 
 uninstall:
 
-	@rm -rf $(DESTDIR)/usr/share/canaima-base
+	@echo "Nada para desinstalar!"
 
 clean:
 
