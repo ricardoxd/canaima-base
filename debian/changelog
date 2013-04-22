@@ -1,13 +1,10 @@
-canaima-base (4.0~1.gbpdeba29) UNRELEASED; urgency=low
-
-  ** SNAPSHOT build @deba29bde2c53d69310fb937f2aacba54ce4e76e **
+canaima-base (4.0) stable; urgency=low
 
   * [361d6c7] Removiendo configuraciones específicas atadas a idiomas y distribuciones de teclado de Venezuela. Removiendo procesos de postinstalación, preremoción y postremoción. Adaptando debian/rules y Makefile a nueva estructura. Actualizando dependencias para la nueva base: Debian Wheezy. Actualizando estándares. Limpieza y preparación general para la versión 4.0 de Canaima.
-  * [9f9cef9] Nueva versión (snapshot) 4.0-1
   * [304abe1] Cambiando formato del paquete a nativo + compresión xz.
   * [deba29b] Removiendo dependencias directas a libc6.
 
- -- Luis Alejandro Martínez Faneyth <luis@huntingbears.com.ve>  Thu, 18 Apr 2013 13:31:12 -0430
+ -- Luis Alejandro Martínez Faneyth <luis@huntingbears.com.ve>  Mon, 22 Apr 2013 14:50:23 -0430
 
 canaima-base (3.1-21) stable; urgency=low
 
