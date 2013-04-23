@@ -1,10 +1,14 @@
-canaima-base (4.0) stable; urgency=low
+canaima-base (4.0) unstable; urgency=low
 
+  [ Luis Alejandro Martínez Faneyth ]
   * [361d6c7] Removiendo configuraciones específicas atadas a idiomas y distribuciones de teclado de Venezuela. Removiendo procesos de postinstalación, preremoción y postremoción. Adaptando debian/rules y Makefile a nueva estructura. Actualizando dependencias para la nueva base: Debian Wheezy. Actualizando estándares. Limpieza y preparación general para la versión 4.0 de Canaima.
   * [304abe1] Cambiando formato del paquete a nativo + compresión xz.
   * [deba29b] Removiendo dependencias directas a libc6.
 
- -- Luis Alejandro Martínez Faneyth <luis@huntingbears.com.ve>  Mon, 22 Apr 2013 14:50:23 -0430
+  [ Erick Birbe ]
+  * [b69c2e3] Eliminando opcion de compresion en xz
+
+ -- Erick Birbe <erickcion@gmail.com>  Tue, 23 Apr 2013 16:22:30 -0430
 
 canaima-base (3.1-21) stable; urgency=low
 
