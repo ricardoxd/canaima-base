@@ -1,3 +1,9 @@
+canaima-base (4.0+2) unstable; urgency=low
+
+  * [e327c6a] Removiendo dependencia a lsb-release (no es un paquete Required). Agregando condición "Essential" a canaima-base.
+
+ -- Luis Alejandro Martínez Faneyth <luis@huntingbears.com.ve>  Fri, 10 May 2013 15:50:56 -0430
+
 canaima-base (4.0) unstable; urgency=low
 
   [ Luis Alejandro Martínez Faneyth ]
