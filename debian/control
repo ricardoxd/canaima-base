@@ -1,5 +1,5 @@
 Source: canaima-base
-Section: misc
+Section: admin
 Priority: required
 Maintainer: Luis Alejandro Martínez Faneyth <luis@huntingbears.com.ve>
 Build-Depends: debhelper (>= 9)
@@ -10,12 +10,14 @@ Vcs-Browser: http://gitorious.org/canaima-gnu-linux/canaima-base/trees/master
 
 Package: canaima-base
 Architecture: all
-Depends:		base-files (>= 7.1),
+Essential: yes
+Depends:		canaima-llaves (>= 4.0+1),
+			lsb-base (>= 4.1+Debian8Canaima1),
+			base-files (>= 7.1Canaima1),
 			base-passwd (>= 3.5.26),
 			bash (>= 4.2+dfsg-0.1),
 			bsdutils (>= 1:2.20.1-5.3),
 			coreutils (>= 8.13-3.5),
-			canaima-llaves,
 			dash (>= 0.5.7-3),
 			debconf (>= 1.5.49),
 			debconf-i18n (>= 1.5.49),
@@ -52,8 +54,6 @@ Depends:		base-files (>= 7.1),
 			libtinfo5 (>= 5.9-10),
 			libuuid1 (>= 2.20.1-5.3),
 			login (>= 1:4.1.5.1-1),
-			lsb-base (>= 4.1+Debian8),
-			lsb-release (>= 4.1+Debian8),
 			mawk (>= 1.3.3-17),
 			mount (>= 2.20.1-5.3),
 			multiarch-support (>= 2.13-38),
